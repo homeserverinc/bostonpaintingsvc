@@ -1,0 +1,179 @@
+------------------------------------------------------
+ CHANGELOG
+------------------------------------------------------
+ 
+ Versão 1.7.9 - 17/02/2010
+  - Adicionado uma opção ocultar o campo do tipo enum que não existia
+  - Corrigido bug que não funcionava máscara de hora no formato 00:00 por causa dos dois pontos
+  - Adicionado uma opção para redirecionar a alteração de cadastro para outro link mantendo as variáveis
+ 
+ Versão 1.7.6 - 16/10/2009
+  - Adicionado uma opção definir um title antes de determinado campo (array)
+ 
+ Versão 1.7.5 - 01/09/2009
+  - Adicionado uma opção para html extra ao lado dos botões da tela de cadastro
+  - Adicionado uma opção para html extra ao lado dos botões da tela de manage
+  - Adicionado uma opção para definir o comment da tabela em tempo real
+  - Adicionado uma opção para definir o comment de determinado campo em tempo real (array)
+ 
+ Versão 1.7.1 - 04/08/2009
+  - Adicionado uma opção que define um html extra a um campo de cadastro do sistema
+  - Adicionado uma opção de sql alternativo de order para manage do sistema
+ 
+ Versão 1.6.9 - 31/07/2009
+  - Separado os arquivos de administração para ficar mais leve e dar mais performace ao sistema
+  - Novo formato de mascaras personalizadas para campos
+ 
+ Versão 1.6.7 - 09/07/2009
+  - Adicionado uma opção para relacionar uma tabela via código, com janela externa de pesquisa
+  - Adicionado uma opção para redirecionar o cadastro para outro link (array) campo e link
+  - As tabelas possuem um terceiro relacionamento, em vez de apenas 2 niveis
+ 
+ Versão 1.6.4 - 07/07/2009
+  - Adicionado uma opção para definir um html extra ao p de cada item do cadastro
+ 
+ Versão 1.6.3 - 01/07/2009
+  - Adicionado uma opção para escolha de exemplos para campos no código
+ 
+ Versão 1.6.2 - 06/05/2009
+  - Adicionado uma opção para escolha de uma tabela de backup para guardar dados em segurança
+ 
+ Versão 1.6.1 - 22/04/2009
+  - Corrigido campo de moeda (double), que não permitia que cadastrasse em branco
+ 
+ Versão 1.6 - 02/04/2009
+  - Adicionado opções para uma melhor personalização no gerenciamento automatico
+ 
+ Versão 1.5.1 - 25/03/2009
+  - Alterações de exposição de html e css
+ 
+ Versão 1.5 - 23/03/2009
+  - Corrigido bug que não deixava salvar checkbox sem nenhum selecionado
+  - Adicionado opção para inserir campos com senha (password)
+ 
+ Versão 1.3 - 13/03/2009
+  - Adicionado opção para colocar exemplo nos campos
+ 
+ Versão 1.2 - 09/03/2009
+  - Adicionado opção de config dos comentários da tabela e dos campos
+  - Separado a administração do arquivo principal para não pesar na capa do site
+ 
+ Versão 1.0 - 06/03/2009
+  - Primeira versão estável
+ 
+ Inciada em: 23/01/2009
+ 
+------------------------------------------------------
+ TABELA
+------------------------------------------------------
+ 
+t -> title (título do sitema)
+ Ex: t:Controle de clientes
+ 
+i -> insert (define se pode cadastrar na tabela)
+ Ex: i:1
+ Ex: i:0
+ 
+m -> manage (define se pode gerenciar a tabela)
+ Ex: m:1
+ Ex: m:0
+ 
+u -> update (define se pode atualizar dados da tabela)
+ Ex: u:1
+ Ex: u:0
+ 
+d -> delete (define se pode deletar dados da tabela)
+ Ex: d:1
+ Ex: d:0
+ 
+o -> order (define a ordem padrão da tabela)
+ Ex: o:nm_campo,a ("a" para crescente)
+ Ex: o:nm_campo,d ("d" para decrescente)
+ 
+r -> relation (define a tabela que irá cadastrar dados com o código da tabela atual)
+ Ex: r:tabela,titulo (ATENÇÃO, ESSE COMENTÁRIO É COLOCADO NO PRIMEIRO CAMPO DA TABELA ATUAL)
+ 
+ 
+ 
+------------------------------------------------------
+ CAMPOS
+------------------------------------------------------
+ 
+t -> title (título do campo)
+ Ex: t:Nome
+ 
+s -> size (tamanho do campo, caso não queira usar padrão)
+ Ex: s:30
+ 
+ml-> maxlength (tamanho máximo de caracteres no campo)
+ Ex: ml:50
+ 
+v -> validation (tipo de validação em tempo real do campo)
+ Ex: v:number (somente números)
+ Ex: v:email (somente emails válidos)
+ Ex: v:url (somente urls válidas)
+ 
+m -> mask (define uma máscara para o campo - "a" para letras, "9" para numeros e "*" para todos)
+ Ex: m:99/99/9999
+ Ex: m:99999-999
+ Ex: m:(99) 9999-9999
+ Ex: m:aaa-9999
+ 
+l -> lista (define se o campo vai aparecer na lista de gerenciamento)
+ Ex: l:1
+ Ex: l:0
+ 
+a -> align (define se o campo será centralizado na lista de gerenciamento)
+ Ex: a:center
+ 
+r -> relation (define a tabela que irá se relacionar)
+ Ex: r:tabela,nm_campo,nm_campo2 ("nm_campo" que irá aparecer, e "nm_campo2" caso queira mostrar no gerenciar)
+ 
+rc-> relation_codigo (define os campos que vão aparecer na janela externa relacionada com o código. Esta opção é usada junto com a r->relation)
+ Ex: rc:nm_campo1,nm_campo2,nm_campo3
+ 
+f -> file (define se o campo é pra enviar arquivos)
+ Ex: f:jpg,gif
+ 
+p -> padrão (define se o campo terá um valor padrão na hora de cadastrar)
+ Ex: NOW()
+ Ex: QUALQUERCOISA
+ 
+o -> oculto (oculta o campo para não aparecer em telas de cadastro e alterações)
+ Ex: o:1
+ Ex: o:0
+ 
+c -> campo (define o tipo de campo no html)
+ Ex: c:radio
+ Ex: c:checkbox,tabela,nm_campo ("nm_campo" que irá aparecer)
+ Ex: c:password
+ 
+ro-> readonly (define o campo como somente leitura)
+ Ex: ro:1
+ Ex: ro:0
+ 
+ex-> exemplo (define se o campo vai ter algum tipo de exemplo de dados)
+ Ex: ex:qualquercoisa
+ 
+ 
+------------------------------------------------------
+ VARIAVEIS PARA ADMIN
+------------------------------------------------------
+ 
+v_tabela_comment; //define o comment da tabela em tempo real
+v_title_alternativo; //titulo alternativo para aparecer em baixo do titulo do sistema
+v_sql_where_manage; //sql alternativo de where para manage do sistema
+v_sql_order_manage; //sql alternativo de order para manage do sistema
+v_campo_title_before; //define um title antes de determinado campo (array)
+v_campo_comment; //define o comment de determinado campo em tempo real (array)
+v_campo_padrao;  //define um campo com valor padrão (array)
+v_campo_exemplo; //define um exemplo para determinado campo (array)
+v_html_extra_p;  //define um html extra ao p em determinado campo que são os itens de cadastro do sistema (array)
+v_html_extra_campo; //define um html extra a um determinado campo que são os itens de cadastro do sistema (array)
+v_html_extra_admin; //adiciona um html extra ao lado dos botões no link de admin (principal)
+v_html_extra_insert; //adiciona um html extra ao lado dos botões no link de cadastro
+v_html_extra_manage; //adiciona um html extra ao lado dos botões no link de manage
+v_html_extra_update; //adiciona um html extra ao lado dos botões no link de edição
+v_redireciona_cadastro; //redireciona o cadastro para outro link (array) campo e link
+v_redireciona_alteracao;//redireciona a alteração para outro link seguido das variáveis atuais. Ex: teste.php?
+v_tabela_backup; //seta uma tabela de backup para guardar dados em segurança

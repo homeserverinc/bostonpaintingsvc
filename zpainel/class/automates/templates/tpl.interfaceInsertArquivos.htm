@@ -1,0 +1,109 @@
+<!-- %inicio% -->
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>{%title%}</title>
+	<link rel="stylesheet" type="text/css" href="../class/automates/css/screen.css" />
+	<link rel="stylesheet" type="text/css" href="../class/automates/css/thickbox.css" />
+	<style type="text/css">
+		#FlashFilesUpload {
+			border: 6px solid #FFCE09;
+                        display: block;
+		}
+	</style>
+</head>
+<body>
+<form class="cmxform" onsubmit="return false;">
+	<fieldset>
+		<div class="titulosSistemas"><a href="?" title="{%title%}">{%title%}</a> » <a href="?action=manage&palavra={%palavraRedir%}&pagina={%paginaRedir%}" title="Gerenciar">Gerenciar</a> » <a href="?action=update&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}" title="Editar">Editar</a> » Cadastrar {%relationTitle%}</div>
+		<p>
+			<OBJECT id="FlashFilesUpload" codeBase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+					width="450" height="350" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" VIEWASTEXT>
+					<!-- Replace symbols " with the &quot; at all parameters values and
+					symbols "&" with the "%26" at URL values or &amp; at other values!
+					The same parameters values should be set for EMBED object below. -->
+				<PARAM NAME="FlashVars" VALUE="uploadUrl=uploadfiles.php?codigo={%codigoRedir%}%26tabela={%tabela%}%26campoRelacao={%campoRelacao%}%26campoArquivo={%campoArquivo%}%26caminho={%caminho%}
+			&alertAboutOldversion=No
+			&fileTypes={%realExtensoesFile%}|{%realExtensoesFile%}
+			&labelUploadText=Selecione o(s) arquivo(s) para enviar
+			&uploadButtonText=Enviar
+			&browseButtonText=Procurar...
+			&removeButtonText=Remover item
+			&clearListButtonText=Limpar lista
+			&progressMainText=<PERCENT>%25 Enviado (<FILESNUM> arquivo(s))<PART2DIV><BR>Taxa de transferência: <RATEVALUE>/seg<BR>Tempo restante: <LEFTMIN> min <LEFTSEC> seg
+			&progressUploadCompleteText=Envio completo
+			&progressUploadingText=Enviando...
+			&progressUploadStoppedText=Envio parado
+			&cancelButtonText=Cancelar
+			&totalSizeText=Tamanho total do(s) arquivo(s) <SIZE>
+			&fileSizeExceedMessage=Somente arquivos menores que <MAXFILESIZE> Kb são permitidos. <COUNTINVALIDFILES> arquivos foram ignorados!
+			&fileSizeTotalExceedMessage=Total dos arquivos deve ser menor que <MAXFILESIZETOTAL> Kb. <COUNTINVALIDFILES> arquivos foram ignorados!
+			&filesCountExceedMessage=Somente <MAXFILECOUNT> arquivos são permitidos para enviar! <COUNTINVALIDFILES> arquivos foram ignorados!
+			&zeroSizeMessage=<COUNTINVALIDFILES> arquivos com tamanho zero foram ignorados!
+			&fileTypeWrongMessage=Somente esses tipos de arquivos: <FILETYPES> são permitidos para enviar! <COUNTINVALIDFILES> arquivos foram ignorados!
+			&retryDialogCaption=Enviar novamente?
+			&retryDialogMessage=Alguns arquivos não foram enviados. Tentar enviar novamente?
+			&retryDialogYesLabel=Sim
+			&backgroundColor=#FFFFFF
+			&maxFileSize=1048576">
+				<PARAM NAME="BGColor" VALUE="#FFFFFF">
+				<PARAM NAME="Movie" VALUE="../class/automates/jscript/MultiPowUpload/ElementITMultiPowUpload1.7.swf">
+				<PARAM NAME="Src" VALUE="../class/automates/jscript/MultiPowUpload/ElementITMultiPowUpload1.7.swf">
+				<PARAM NAME="WMode" VALUE="Window">
+				<PARAM NAME="Play" VALUE="-1">
+				<PARAM NAME="Loop" VALUE="-1">
+				<PARAM NAME="Quality" VALUE="High">
+				<PARAM NAME="SAlign" VALUE="">
+				<PARAM NAME="Menu" VALUE="-1">
+				<PARAM NAME="Base" VALUE="">
+				<PARAM NAME="AllowScriptAccess" VALUE="always">
+				<PARAM NAME="Scale" VALUE="ShowAll">
+				<PARAM NAME="DeviceFont" VALUE="0">
+				<PARAM NAME="EmbedMovie" VALUE="0">
+				<PARAM NAME="SWRemote" VALUE="">
+				<PARAM NAME="MovieData" VALUE="">
+				<PARAM NAME="SeamlessTabbing" VALUE="1">
+				<PARAM NAME="Profile" VALUE="0">
+				<PARAM NAME="ProfileAddress" VALUE="">
+				<PARAM NAME="ProfilePort" VALUE="0">
+			
+				<!-- Embed for Netscape,Mozilla/FireFox browsers support. Flashvars parameters are the same.-->
+					<!-- Replace symbols " with the &quot; at all parameters values and
+					symbols "&" with the "%26" at URL values or &amp; at other values! -->
+				<embed bgcolor="#FFFFFF" id="EmbedFlashFilesUpload" src="../class/automates/jscript/MultiPowUpload/ElementITMultiPowUpload1.7.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"	type="application/x-shockwave-flash" width="450" height="350"
+				flashvars="uploadUrl=uploadfiles.php?codigo={%codigoRedir%}%26tabela={%tabela%}%26campoRelacao={%campoRelacao%}%26campoArquivo={%campoArquivo%}%26caminho={%caminho%}
+			&alertAboutOldversion=No
+			&fileTypes={%realExtensoesFile%}|{%realExtensoesFile%}
+			&labelUploadText=Selecione o(s) arquivo(s) para enviar
+			&uploadButtonText=Enviar
+			&browseButtonText=Procurar...
+			&removeButtonText=Remover item
+			&clearListButtonText=Limpar lista
+			&progressMainText=<PERCENT>%25 Enviado (<FILESNUM> arquivo(s))<PART2DIV><BR>Taxa de transferência: <RATEVALUE>/seg<BR>Tempo restante: <LEFTMIN> min <LEFTSEC> seg
+			&progressUploadCompleteText=Envio completo
+			&progressUploadingText=Enviando...
+			&progressUploadStoppedText=Envio parado
+			&cancelButtonText=Cancelar
+			&totalSizeText=Tamanho total do(s) arquivo(s) <SIZE>
+			&fileSizeExceedMessage=Somente arquivos menores que <MAXFILESIZE> Kb são permitidos. <COUNTINVALIDFILES> arquivos foram ignorados!
+			&fileSizeTotalExceedMessage=Total dos arquivos deve ser menor que <MAXFILESIZETOTAL> Kb. <COUNTINVALIDFILES> arquivos foram ignorados!
+			&filesCountExceedMessage=Somente <MAXFILECOUNT> arquivos são permitidos para enviar! <COUNTINVALIDFILES> arquivos foram ignorados!
+			&zeroSizeMessage=<COUNTINVALIDFILES> arquivos com tamanho zero foram ignorados!
+			&fileTypeWrongMessage=Somente esses tipos de arquivos: <FILETYPES> são permitidos para enviar! <COUNTINVALIDFILES> arquivos foram ignorados!
+			&retryDialogCaption=Enviar novamente?
+			&retryDialogMessage=Alguns arquivos não foram enviados. Tentar enviar novamente?
+			&retryDialogYesLabel=Sim
+			&backgroundColor=#FFFFFF
+			&maxFileSize=1048576">
+				</embed>
+			  </OBJECT>
+		</p>
+		<p>
+			<input type="button" value="Voltar" onclick="window.location = '?action=update&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}'" />
+		</p>
+	</fieldset>
+</form>
+</body>
+</html>

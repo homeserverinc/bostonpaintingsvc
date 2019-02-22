@@ -1,0 +1,62 @@
+<!-- %inicio% -->
+<html>
+<head>
+	<title>Configurações</title>
+	<style type="text/css">
+		hr,h1,form {
+			margin: 0; padding: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		function mEnvia() {
+			if (document.getElementById("pass").value == "") {
+				alert("Preencha a senha de autenticação!");
+				document.getElementById("pass").focus();
+				return false;
+			} else {
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form method="get">
+		<input type="hidden" name="action" value="config" />
+		<h1><a href="?action=config" style="color: #000000; text-decoration: none;">Configurações</a> » Tabela base: <input name="tabelaBase" id="tabelaBase" type="text" size="30" value="{%tabelaBase%}" /> <input type="submit" value="Configurar" /> {%msg%}</h1>
+	</form>
+	<hr />
+	<form method="post" action="?action=config&tabelaBase={%tabelaBase%}&dados=true" onsubmit="return mEnvia();">
+		<h2>Tabela: {%tabelaBase%}</h2>
+		<table width="100%">
+			<tr>
+				<td width="9%">Comentários:</td>
+				<td><input type="text" size="70" name="tabela" maxlength="60" value="{%tabelaComment%}" /></td>
+			</tr>
+		</table>
+		<hr />
+		<h2>Campos da tabela ({%tabelaBase%})</h2>
+		<table width="100%">
+<!-- %while% -->
+			<tr>
+				<td width="10%">{%field%}:</td>
+				<td><input type="text" name="{%field%}" size="60" maxlength="200" value="{%comment%}" /></td>
+			</tr>
+<!-- %fim% -->
+		</table>
+		<hr />
+		<h2>Autenticação</h2>
+		<table width="100%">
+			<tr>
+				<td width="6%">Usuário:</td>
+				<td><input type="text" name="user" value="zaib" /></td>
+			</tr>
+			<tr>
+				<td width="6%">Senha:</td>
+				<td><input type="password" id="pass" name="pass" /></td>
+			</tr>
+		</table>
+		<hr />
+		<input type="submit" value="Salvar alterações" />
+	</form>
+</body>
+</html>

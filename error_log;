@@ -1,0 +1,14 @@
+[22-Feb-2019 05:01:17 America/Los_Angeles] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; cErros has a deprecated constructor in /home1/eduardofirst/sites/bostonpaintingsvc.com/zpainel/class/inc.erros.php on line 14
+[22-Feb-2019 05:01:17 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home1/eduardofirst/sites/bostonpaintingsvc.com/zpainel/class/inc.conexao.php:88
+Stack trace:
+#0 /home1/eduardofirst/sites/bostonpaintingsvc.com/zpainel/class/inc.conexao.php(79): cConexao->mConecta()
+#1 /home1/eduardofirst/sites/bostonpaintingsvc.com/index.php(26): cConexao->__construct()
+#2 {main}
+  thrown in /home1/eduardofirst/sites/bostonpaintingsvc.com/zpainel/class/inc.conexao.php on line 88
+[22-Feb-2019 05:01:18 America/Los_Angeles] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; cErros has a deprecated constructor in /home1/eduardofirst/sites/bostonpaintingsvc.com/zpainel/class/inc.erros.php on line 14
+[22-Feb-2019 05:01:18 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home1/eduardofirst/sites/bostonpaintingsvc.com/zpainel/class/inc.conexao.php:88
+Stack trace:
+#0 /home1/eduardofirst/sites/bostonpaintingsvc.com/zpainel/class/inc.conexao.php(79): cConexao->mConecta()
+#1 /home1/eduardofirst/sites/bostonpaintingsvc.com/index.php(26): cConexao->__construct()
+#2 {main}
+  thrown in /home1/eduardofirst/sites/bostonpaintingsvc.com/zpainel/class/inc.conexao.php on line 88

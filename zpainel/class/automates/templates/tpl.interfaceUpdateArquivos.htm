@@ -1,0 +1,206 @@
+<!-- %inicio% -->
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>{%title%}</title>
+	<link rel="stylesheet" type="text/css" href="../class/automates/css/screen.css" />
+	<link rel="stylesheet" type="text/css" href="../class/automates/css/thickbox.css" />
+	<script type="text/javascript" src="../class/automates/jscript/jquery.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/jquery.metadata.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/thickbox.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/jquery.validate.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/ajax.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/mascaras.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/maskedinput.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/jqUploader/jquery.flash.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/jqUploader/jquery.jqUploader.js"></script>
+	<script type="text/javascript">
+		$.metadata.setType("attr", "validate");
+		
+		$(document).ready(function(){
+			{%semEdicao1%}$("#formUpdate").validate();
+			
+{%fileJavascript%}
+		});
+		function mDeletaArquivo(nmId,nmArquivo,nmCampo) {
+			if (confirm("Tem certeza que deseja excluir o arquivo selecionado?")) {
+				document.getElementById("bt"+nmId).disabled = true;
+				document.getElementById(nmCampo).value = "";
+				$("#bt"+nmId).ajaxStart(function(){	$("#file"+nmCampo).empty().html("Aguarde carregando..."); });
+				$.get("?action=deleteArquivoArquivos",{nmArquivo: nmArquivo, nmCampo: nmCampo, nmId: nmId}, function(data) {
+					$("#file"+nmCampo).empty().html(data);
+				});
+			}
+		}
+		function mEnvia() {
+			{%semEdicao2%}
+			if ($("#formUpdate").valid()) {
+				document.getElementById("bt1").disabled = true;
+				document.getElementById("bt2").disabled = true;
+				document.getElementById("bt3").disabled = true;
+				document.getElementById("bt4").disabled = true;
+				tb_show("", "carregandoFalso.jpg", false);
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+<form class="cmxform" id="formUpdate" method="post" enctype="multipart/form-data" action="?action=updateArquivos&dados=true&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}&palavra2={%palavra2Redir%}&pagina2={%pagina2Redir%}&codigo2={%codigo2Redir%}" onsubmit="return mEnvia();">
+	<fieldset>
+		<div class="titulosSistemas"><a href="?" title="{%title%}">{%title%}</a> » <a href="?action=manage&palavra={%palavraRedir%}&pagina={%paginaRedir%}" title="Gerenciar">Gerenciar</a> » <a href="?action=update&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}" title="Editar">Editar</a> » <a href="?action=manageArquivos&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}&palavra2={%palavra2Redir%}&pagina2={%pagina2Redir%}" title="Gerenciar {%relationTitle%}">Gerenciar {%relationTitle%}</a> » Editar</div>
+<!-- %mensagemSucesso% -->
+		<p id="cadSucesso" style="background: none; background-color: #FFD7D7; color: red; border: 1px dotted red; margin-top: 10px; margin-bottom: 10px;">
+			<strong>Alterações efetuadas com sucesso!</strong> <a href="javascript:;" style="color: red; font-size: 12px;" onclick="document.getElementById('cadSucesso').style.display='none';">(ocultar mensagem)</a>
+		</p>
+<!-- %inicio2% -->
+		<p>
+			{%semEdicao3%}<input id="bt1" type="submit" value="Salvar alterações" />{%semEdicao4%}
+			<input id="bt2" type="button" {%semEdicao5%} value="Voltar" onclick="window.location = '?action=manageArquivos&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}&palavra2={%palavra2Redir%}&pagina2={%pagina2Redir%}'" />
+		</p>
+<!-- %oculto% -->
+		<input type="hidden" id="{%field%}" name="{%field%}" value="{%valorCampo%}" {%html_extra_campo%} />
+<!-- %varchar% -->
+		<p {%p_extra%}>{%mask%}
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<input id="{%field%}" name="{%field%}" size="{%size%}" class="{%class%}" {%readOnly%} maxlength="{%maxlength%}" value="{%valorCampo%}" {%html_extra_campo%} /> {%exemplo%}
+		</p>
+<!-- %password% -->
+		<p {%p_extra%}>{%mask%}
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<input type="password" id="{%field%}" name="{%field%}" size="{%size%}" class="{%class%}" {%readOnly%} maxlength="{%maxlength%}" value="{%valorCampo%}" {%html_extra_campo%} /> {%exemplo%}
+		</p>
+<!-- %checkbox% -->
+		<p {%p_extra%}>
+			<label for="{%field%}[]"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<table>
+<!-- %checkbox_while% -->
+				<tr>
+<!-- %checkbox_while2% -->
+					<td>
+						<label for="{%idCheckbox%}" style="width: auto; margin-right: 5px;">
+							<input type="checkbox" id="{%idCheckbox%}" value="{%cd_checkbox%}" name="{%field%}[]" {%readOnly%} {%checkbox_checked%} {%validateCheckbox%} style="border: 0;" />
+							{%valor_checkbox%}
+						</label>
+					</td>
+<!-- %checkbox_while3% -->
+				</tr>
+<!-- %checkbox_fim% -->
+			</table>
+			<label for="{%field%}[]" class="error" style="display: none;">Por favor, selecione no mínimo uma opção.</label>
+		</p>
+<!-- %int% -->
+		<p {%p_extra%}>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<input id="{%field%}" name="{%field%}" size="{%size%}" class="{%class%}" {%readOnly%} onkeypress="return(mCampoNumerico(this, event));" maxlength="{%maxlength%}" value="{%valorCampo%}" {%html_extra_campo%} /> {%exemplo%}
+		</p>
+<!-- %file_existe% -->
+		<p {%p_extra%}>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<span id="file{%field%}">
+				<a href="{%urlArquivoAmpliar%}" {%targetAmpliar%}><img src="{%urlArquivo%}" width="120" alt="{%altImagemArquivo%}" style="border: 3px solid #FFCE09;" /></a>
+<!-- %file_existe_excluir% -->
+				<input type="button" id="bt{%valorArquivoSemExtensao%}" name="bt{%valorArquivoSemExtensao%}" {%textoBotaoExcluirArquivo%} onclick="mDeletaArquivo('{%valorArquivoSemExtensao%}','{%valorCampo%}','{%field%}');" style="margin-top: -34px;" />
+<!-- %file_existe_fim% -->
+			</span>
+			<input name="{%field%}" id="{%field%}" value="{%valorCampo%}" type="hidden" class="{%class%}" />
+		</p>
+<!-- %file_nao_existe% -->
+		<p {%p_extra%}>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<span id="file{%field%}">
+				<input id="{%field%}" name="{%field%}" size="40" type="file" />
+			</span>
+			<input name="{%field%}" id="{%field%}" value="" type="hidden" class="{%class%}" />
+		</p>
+<!-- %relation% -->
+		<p {%p_extra%}>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+<!-- %relation_codigo% -->
+			<input id="{%field%}" name="{%field%}" size="{%size%}" value="{%valorCampo%}" class="{%class%}" {%readOnly%} onkeypress="return(mCampoNumerico(this, event));" onkeyup="mGeraRespostaRelationCodigo(this.value,this.id,'{%tabelaRelationCodigo%}','{%tabelaRelationCodigoCampo%}','id_span_{%field%}');" maxlength="{%maxlength%}" value="{%padraoCampo%}" /> <a href="javascript:tb_show('Procurar...', '?action=consulta-relation-codigo&tabela={%tabelaRelationCodigo%}&campos={%tabelaRelationCodigoCamposMostrar%}&id={%field%}&campoAjax={%tabelaRelationCodigoCampo%}&KeepThis=true&TB_iframe=true&height=350&width=550', false);window.location='#';void(0);" tabindex="200"><img src="../class/automates/images/lupa.gif" alt="Procurar..." class="btLupaProcurar"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="id_span_{%field%}" style="font-style: italic;">{%tabelaRelationCodigoCampoMostrar%}</span>
+<!-- %relation_select_inicio% -->
+			<select id="{%field%}" name="{%field%}" class="{%class%}" {%readOnly%} {%html_extra_campo%}>
+				<option value="">Selecione</option>
+<!-- %relation_select_while% -->
+				<option value="{%cd_relation%}" {%selected_relation%}>{%valor_relation%}</option>
+<!-- %relation_select_fim% -->
+			</select> {%exemplo%}
+<!-- %relation_radio_while_inicio% -->
+			<table>
+<!-- %relation_radio_while% -->
+				<tr>
+<!-- %relation_radio_while2% -->
+					<td>
+						<label for="{%idRadio%}" style="width: auto; margin-right: 5px;">
+							<input type="radio" id="{%idRadio%}" value="{%cd_relation%}" name="{%field%}" {%readOnly%} {%checked_relation%} {%validateRadio%} style="border: 0;" />
+							{%valor_relation%}
+						</label>
+					</td>
+<!-- %relation_radio_while3% -->
+				</tr>
+<!-- %relation_radio_fim% -->
+			</table>
+			<label for="{%field%}" class="error" style="display: none;">Este campo é obrigatório.</label>
+<!-- %relation_fim% -->
+		</p>
+<!-- %text% -->
+		<p {%p_extra%}>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<textarea id="{%field%}" name="{%field%}" cols="{%size%}" rows="5" class="{%class%}" {%readOnly%} {%html_extra_campo%}>{%valorCampo%}</textarea> {%exemplo%}
+		</p>
+<!-- %date% -->
+		<p {%p_extra%}><script type="text/javascript">jQuery(function($){ $("#{%field%}").mask("99/99/9999"); });</script>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<input id="{%field%}" name="{%field%}" size="12" class="{%class%}" maxlength="10" {%readOnly%} value="{%valorCampo%}" {%html_extra_campo%} /> Ex: 00/00/0000
+		</p>
+<!-- %datetime% -->
+		<p {%p_extra%}>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<input id="{%field%}" name="{%field%}" size="22" class="{%class%}" maxlength="19" {%readOnly%} value="{%valorCampo%}" {%html_extra_campo%} /> {%exemplo%}
+		</p>
+<!-- %double% -->
+		<p {%p_extra%}>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+			<input id="{%field%}" name="{%field%}" size="16" class="{%class%}" {%readOnly%} onkeypress="return(mMascaraMoeda(this, '.',',',event));" maxlength="{%maxlength%}" value="{%valorCampo%}" {%html_extra_campo%} /> Ex: 0,00 {%exemplo%}
+		</p>
+<!-- %enum% -->
+		<p {%p_extra%}>
+			<label for="{%field%}"><strong>{%titleCampo%}</strong> {%asteriscoReq%}</label>
+<!-- %enum_select_inicio% -->
+			<select id="{%field%}" name="{%field%}" class="{%class%}" {%readOnly%} {%html_extra_campo%}>
+				<option value="">Selecione</option>
+<!-- %enum_select_while% -->
+				<option value="{%valor_enum%}" {%selected_enum%}>{%valor_enum%}</option>
+<!-- %enum_select_fim% -->
+			</select> {%exemplo%}
+<!-- %enum_radio_while_inicio% -->
+			<table>
+<!-- %enum_radio_while% -->
+				<tr>
+<!-- %enum_radio_while2% -->
+					<td>
+						<label for="{%idRadio%}" style="width: auto; margin-right: 5px;">
+							<input type="radio" id="{%idRadio%}" value="{%valor_enum%}" name="{%field%}" {%readOnly%} {%checked_enum%} {%validateRadio%} style="border: 0;" />
+							{%valor_enum%}
+						</label>
+					</td>
+<!-- %enum_radio_while3% -->
+				</tr>
+<!-- %enum_radio_fim% -->
+			</table>
+			<label for="{%field%}" class="error" style="display: none;">Este campo é obrigatório.</label>
+<!-- %enum_fim% -->
+		</p>
+<!-- %fim% -->
+		<p>
+			{%semEdicao3%}<input id="bt3" type="submit" value="Salvar alterações" />{%semEdicao4%}
+			<input id="bt4" type="button" {%semEdicao5%} value="Voltar" onclick="window.location = '?action=manageArquivos&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}&palavra2={%palavra2Redir%}&pagina2={%pagina2Redir%}'" />
+		</p>
+	</fieldset>
+</form>
+</body>
+</html>

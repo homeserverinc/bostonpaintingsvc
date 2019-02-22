@@ -1,0 +1,180 @@
+body {
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+	background-color: #000000;
+}
+p,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,hr,form,table,tr,td,iframe {
+	margin: 0;
+	padding: 0;
+}
+#topo {
+	width: 100%;
+	height: 27px;
+	float: left;
+	display: inline;
+	background-image: url(../imagens/fundoTopo.jpg);
+	background-repeat: repeat-x;
+}
+#detalheTopo1 {
+	width: 5px;
+	height: 27px;
+	float: left;
+	display: inline;
+	background-image: url(../imagens/detalheTopo1.jpg);
+	background-repeat: no-repeat;
+}
+#detalheTopo2 {
+	width: 5px;
+	height: 27px;
+	float: right;
+	display: inline;
+	background-image: url(../imagens/detalheTopo2.jpg);
+	background-repeat: no-repeat;
+}
+#tituloTopo {
+	width: 35%;
+	height: 27px;
+	float: left;
+	display: inline;
+}
+#tituloTopo h1 {
+	float: left;
+	display: inline;
+	margin-top: 9px;
+	margin-left: 7px;
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#menuTopo {
+	width: 60%;
+	height: 27px;
+	float: right;
+	display: inline;
+}
+#menuTopo ul {
+	list-style: none;
+}
+#menuTopo ul li {
+	float: right;
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	margin-top: 6px;
+}
+#menuTopo ul li span {
+	float: left;
+	margin-top: 3px;
+}
+#menuTopo ul li a {
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-left: 10px;
+	text-decoration: none;
+	padding: 3px;
+	float: left;
+}
+#menuTopo ul li a:hover {
+	color: #FFCC00;
+	text-decoration: underline;
+}
+#menuZpainel {
+	width: 20%;
+	height: 85%;
+	float: left;
+	display: inline;
+	margin-top: 17px;
+}
+#espacoConteudo {
+	width: 79%;
+	height: 85%;
+	float: left;
+	display: inline;
+	margin-top: 17px;
+	margin-left: 1%;
+	background-color: #5A5A5A;
+	background-image: url(../imagens/fundoConteudo.jpg);
+	background-repeat: repeat-x;
+	background-position: top;
+}
+#detalheConteudo1 {
+	width: 1.5%;
+	height: 100%;
+	float: left;
+	display: inline;
+	background-image: url(../imagens/detalheConteudo1.jpg);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+#detalheConteudo2 {
+	width: 1.5%;
+	height: 100%;
+	float: left;
+	display: inline;
+	background-image: url(../imagens/detalheConteudo2.jpg);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+#iframeConteudo {
+	width: 96.9%;
+	height: 95.5%;
+	float: left;
+	display: inline;
+	margin-top: 1.5%;
+	border: 0;
+}
+#rodape {
+	width: 100%;
+	height: 27px;
+	float: left;
+	display: inline;
+	margin-top: 10px;
+	background-image: url(../imagens/fundoTopo.jpg);
+	background-repeat: repeat-x;
+}
+#detalheRodape1 {
+	width: 5px;
+	height: 27px;
+	float: left;
+	display: inline;
+	background-image: url(../imagens/detalheTopo1.jpg);
+	background-repeat: no-repeat;
+}
+#detalheRodape2 {
+	width: 5px;
+	height: 27px;
+	float: right;
+	display: inline;
+	background-image: url(../imagens/detalheTopo2.jpg);
+	background-repeat: no-repeat;
+}
+#tituloRodape {
+	width: 50%;
+	height: 27px;
+	float: left;
+	display: inline;
+}
+#tituloRodape address {
+	float: left;
+	display: inline;
+	margin-top: 9px;
+	margin-left: 7px;
+	font: 9px Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+#tituloRodape2 {
+	width: 40%;
+	height: 27px;
+	float: right;
+	display: inline;
+}
+#tituloRodape2 address {
+	float: right;
+	display: inline;
+	margin-top: 9px;
+	margin-right: 7px;
+	font: 9px Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}

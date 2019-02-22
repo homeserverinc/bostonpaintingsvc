@@ -1,0 +1,91 @@
+<!-- %inicio% -->
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>{%title%}</title>
+	<link rel="stylesheet" type="text/css" href="../class/automates/css/screen.css" />
+	<link rel="stylesheet" type="text/css" href="../class/automates/css/thickbox.css" />
+	<script type="text/javascript" src="../class/automates/jscript/jquery.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/thickbox.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/mascaras.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var p = 0;
+			$("#tabelaLista tr:first").hover(function() {p=1;}, function() {p=0;});
+			
+			$("#tabelaLista tr").hover(function() {
+				if (p==0) $(this).addClass("mouseOverLista");
+			}, function() {
+				$(this).removeClass("mouseOverLista");
+			});
+		});
+		function mEnvia() {
+			if (mConfirmaExcluir('selecionados[]')) {
+				document.getElementById("bt1").disabled = true;
+				document.getElementById("bt2").disabled = true;
+				document.getElementById("bt3").disabled = true;
+				document.getElementById("bt4").disabled = true;
+				tb_show("", "carregandoFalso.jpg", false);
+				return true;
+			} else {
+				return false;
+			}
+		}
+		function mBusca() {
+			document.getElementById("bt1").disabled = true;
+			document.getElementById("bt2").disabled = true;
+			document.getElementById("bt3").disabled = true;
+			document.getElementById("bt4").disabled = true;
+			tb_show("", "carregandoFalso.jpg", false);
+			return true;
+		}
+		function mListaTodos() {
+			document.getElementById("bt1").disabled = true;
+			document.getElementById("bt2").disabled = true;
+			document.getElementById("bt3").disabled = true;
+			document.getElementById("bt4").disabled = true;
+			tb_show("", "carregandoFalso.jpg", false);
+			window.location = '?action=manageArquivos&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}';
+		}
+	</script>
+</head>
+<body>
+<form class="cmxform" id="formInsert" method="get" onsubmit="return mBusca();">
+	<fieldset>
+		<input type="hidden" name="action" value="manageArquivos" />
+		<input type="hidden" name="codigo" value="{%codigoRedir%}" />
+		<input type="hidden" name="palavra" value="{%palavraRedirParaBusca%}" />
+		<input type="hidden" name="pagina" value="{%paginaRedir%}" />
+		<div class="titulosSistemas"><a href="?" title="{%title%}">{%title%}</a> » <a href="?action=manage&palavra={%palavraRedir%}&pagina={%paginaRedir%}" title="Gerenciar">Gerenciar</a> » <a href="?action=update&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}" title="Editar">Editar</a> » Gerenciar {%relationTitle%}</div>
+<!-- %mensagemSucesso% -->
+		<p id="manSucesso" style="background: none; background-color: #FFD7D7; color: red; border: 1px dotted red; margin-top: 10px; margin-bottom: 10px;">
+			<strong>Arquivo(s) excluído(s) com sucesso!</strong> <a href="javascript:;" style="color: red; font-size: 12px;" onclick="document.getElementById('manSucesso').style.display='none';">(ocultar mensagem)</a>
+		</p>
+<!-- %continua% -->
+		<p style="width: 96%;">
+			Total de <strong>{%totalResultados%}</strong> arquivo(s) encontrado(s).
+		</p>
+		<p style="width: 96%;">
+			Busca: <input name="palavra2" id="palavra2" type="text" size="35" value="{%palavra2%}" /> <input id="bt1" type="submit" value="Procurar" style="height: auto !important; height: 24px;" /> <input id="bt4" type="button" value="Listar todos" onclick="mListaTodos();" style="height: auto !important; height: 24px;" />
+		</p>
+	</fieldset>
+</form>
+<!-- %fim% -->
+<form method="post" action="?action=manageArquivos&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}&palavra2={%palavraExcluir%}&pagina2={%paginaExcluir%}&dados=true" onsubmit="return mEnvia();">
+	<table id="tabelaLista" width="99%">
+		<tr bgcolor="#FFCC00" height="26">
+			{%titulos%}
+		</tr>
+{%dados%}
+	</table>
+	<table width="99%">
+		<tr height="23">
+			<td class="paginacao">{%paginacao%}</td>
+			<td align="right"><input id="bt2" type="button" value="Voltar" onclick="window.location = '?action=update&codigo={%codigoRedir%}&palavra={%palavraRedir%}&pagina={%paginaRedir%}'" /> {%botaoExcluir%}</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

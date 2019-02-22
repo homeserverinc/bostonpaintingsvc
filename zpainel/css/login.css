@@ -1,0 +1,145 @@
+/*##################################################
+		corpo
+##################################################*/
+body {
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0;
+	text-align: center;
+	background-color: #000000;
+}
+ul,li,p,dl,dd,dt,h1,h2,h3,h4,h5,h6,form {
+	margin: 0;
+	padding: 0;
+}
+
+/*##################################################
+		#id
+##################################################*/
+#envolveLogin {
+	width: 100%;
+	height: 181px;
+	margin: 0 auto;
+	margin-top: 20%;
+	border-top: 10px solid #333333;
+	border-bottom: 10px solid #333333;
+	background-color: #FFFFFF;
+}
+#login {
+	width: 455px;
+	height: 181px;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+}
+#caixa1 {
+	width: 170px;
+	height: 147px;
+	float: left;
+	display: inline;
+	margin-left: 16px;
+	margin-top: 16px;
+}
+#caixa1 img {
+	float: left;
+	display: inline;
+	margin-top: 6px;
+}
+#caixa1 p { 
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #333333;
+	text-align: left;
+	float: left;
+	display: inline;
+	margin-top: 8px;
+}
+#caixa2 {
+	width: 238px;
+	height: 147px;
+	float: right;
+	display: inline;
+	background-color: #FFFFFF;
+	margin-right: 16px;
+	margin-top: 16px;
+}
+#address {
+	width: 100%;
+	height: auto;
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #777777;
+	float: left;
+	display: inline;
+	margin-top: 5px;
+}
+#address a {
+	color: #777777;
+	text-decoration: none;
+}
+#address a:hover {
+	text-decoration: underline;
+	color: #DDDDDD;
+}
+/*##################################################
+		.class
+##################################################*/
+.oculto {
+	display: none;
+}
+.txtCampo {
+	font: 12px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #333333;
+	float: left;
+	display: inline;
+	clear: both;
+	margin-left: 25px;
+	margin-top: 9px;
+}
+.form {
+	width: 190px;
+	height: 20px !important;
+	height: 24px;
+	float: left;
+	display: inline;
+	clear: both;
+	margin-left: 25px;
+	margin-top: 3px;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+	font: 13px Arial, Helvetica, sans-serif;
+	color: #555555;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 2px;
+}
+.formHover {
+	border: 1px solid #FFCC00;
+}
+.btEntrar {
+	width: 70px;
+	height: 24px !important;
+	height: 26px;
+	float: left;
+	display: inline;
+	margin-left: 25px;
+	margin-top: 13px;
+	clear: both;
+	background-color: #F4F4F4;
+	border: 1px solid #CCCCCC;
+	font: 12px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #444444;
+}
+.btEsqueciASenha {
+	width: 115px;
+	height: 24px !important;
+	height: 26px;
+	float: left;
+	display: inline;
+	margin-left: 5px;
+	margin-top: 13px;
+	background-color: #F4F4F4;
+	border: 1px solid #CCCCCC;
+	font: 12px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #444444;
+}

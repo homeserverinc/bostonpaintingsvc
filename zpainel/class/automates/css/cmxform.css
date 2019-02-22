@@ -1,0 +1,99 @@
+/**********************************
+
+Name: cmxform Styles
+
+***********************************/
+form.cmxform {
+	width: 100%;
+	font-size: 1.0em;
+	color: #333;
+}
+
+form.cmxform legend {
+	padding-left: 0;
+	margin-left: 2px;
+	margin-top: 7px;
+	margin-bottom: 10px;
+}
+
+form.cmxform legend, form.cmxform label {
+	color: #333;
+}
+
+form.cmxform fieldset {
+	border: none;
+}
+
+form.cmxform fieldset fieldset {
+	background: none;
+}
+
+form.cmxform fieldset p, form.cmxform fieldset fieldset {
+	padding: 5px 10px 7px;
+	background: url(../images/cmxform-divider.gif) left bottom repeat-x;
+}
+form.cmxform fieldset p {
+	width: auto;
+	margin-left: 7px;
+}
+form.cmxform fieldset p label span {
+	color: red;
+}
+
+form.cmxform label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color: red;
+	font-style: italic;
+	width: 450px;
+}
+div.error { display: none; }
+input {	border: 1px solid black; }
+input:focus { border: 1px dotted black; }
+input.error { border: 1px dotted red; }
+textarea {	border: 1px solid black; }
+textarea:focus { border: 1px dotted black; }
+textarea.error { border: 1px dotted red; }
+form.cmxform .gray * { color: gray; }
+
+.titulosSistemas {
+	margin-left: 6px;
+	margin-top: 6px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.titulosSistemas a {
+	color: #333333;
+}
+.tbExcluir {
+	width: 40px;
+}
+.tbExcluir input {
+	border: 0;
+}
+.mouseOverLista {
+	background-color: #E5DAB2;
+	cursor: pointer;
+}
+#tabelaLista a {
+	color: #000000;
+}
+.paginacao a {
+	color: #000000;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.paginacao a:hover {
+	background-color: #FFCC00;
+	text-decoration: none;
+}
+.paginacao span {
+	background-color: #FFCC00;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	border: 1px solid #999999;
+}
+.btLupaProcurar {
+	position: absolute;
+	margin-top: 1px;
+}

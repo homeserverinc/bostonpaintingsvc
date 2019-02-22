@@ -1,0 +1,72 @@
+<!-- %inicio% -->
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>{%title%}</title>
+	<link rel="stylesheet" type="text/css" href="../class/automates/css/screen.css" />
+	<link rel="stylesheet" type="text/css" href="../class/automates/css/thickbox.css" />
+	<script type="text/javascript" src="../class/automates/jscript/jquery.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/thickbox.js"></script>
+	<script type="text/javascript" src="../class/automates/jscript/mascaras.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var p = 0;
+			$("#tabelaLista tr:first").hover(function() {p=1;}, function() {p=0;});
+			
+			$("#tabelaLista tr").hover(function() {
+				if (p==0) $(this).addClass("mouseOverLista");
+			}, function() {
+				$(this).removeClass("mouseOverLista");
+			});
+		});
+		function mBusca() {
+			document.getElementById("bt1").disabled = true;
+			tb_show("", "carregandoFalso.jpg", false);
+			return true;
+		}
+		function mSetaValorCampo(campo,valor) {
+			parent.document.getElementById(campo).value = valor;
+			parent.mGeraRespostaRelationCodigo(valor,campo,'{%tabela%}','{%campoAjax%}','id_span_'+campo);
+			self.parent.tb_remove();
+		}
+	</script>
+	<style type="text/css">
+		table tr td { font-size: 11px; }
+	</style>
+</head>
+<body>
+<form class="cmxform" id="formInsert" method="get" onsubmit="return mBusca();">
+	<fieldset>
+		<input type="hidden" name="action" value="consulta-relation-codigo" />
+		<input type="hidden" name="tabela" value="{%tabela%}" />
+		<input type="hidden" name="campos" value="{%campos%}" />
+		<input type="hidden" name="id" value="{%id%}" />
+		<input type="hidden" name="campoAjax" value="{%campoAjax%}" />
+<!-- %continua% -->
+		<p style="width: 96%;">
+			Total de <strong>{%totalResultados%}</strong> cadastro(s) encontrado(s).
+		</p>
+		<p style="width: 96%;">
+			Busca: <input name="palavra" id="palavra" type="text" size="35" value="{%palavra%}" /> <input id="bt1" type="submit" value="Procurar" style="height: auto !important; height: 24px;" />
+		</p>
+	</fieldset>
+</form>
+<!-- %fim% -->
+<form method="post" action="" onsubmit="return false;">
+	<table id="tabelaLista" width="99%">
+		<tr bgcolor="#FFCC00" height="26">
+			{%titulos%}
+		</tr>
+{%dados%}
+	</table>
+	<table width="99%">
+		<tr height="23">
+			<td class="paginacao">{%paginacao%}</td>
+			<td align="right">&nbsp;</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

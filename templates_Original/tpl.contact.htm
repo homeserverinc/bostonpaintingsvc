@@ -1,0 +1,175 @@
+<!-- %inicio% -->
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title" class="">
+
+			<div class="container clearfix">
+				<h1>{%tt_contact%}</h1>
+				<span>{%sub_contact%}</span>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Contact</li>
+				</ol>
+			</div>
+
+		</section><!-- #page-title end -->
+		
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<!-- Postcontent
+					============================================= -->
+					<div class="col_half col_last nobottommargin">
+
+						<h3>Send us an Email</h3>
+
+						<div class="contact-widget">
+
+							<div class="contact-form-result"></div>
+
+							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="contact/send" method="POST">
+								<input type="hidden" name="site_uuid" value="a3ef6cba-77db-492b-81f5-1d23012d1617">
+								<div class="form-process"></div>
+
+								<div class="col_full">
+									<label for="template-contactform-name">Name <small>*</small></label>
+									<input type="text" id="template-contactform-name" name="name" id="name" value="" class="sm-form-control required" />
+								</div>
+
+								<div class="col_full">
+									<label for="template-contactform-email">Email <small>*</small></label>
+									<input type="email" id="template-contactform-email" name="email" id="email" value="" class="required email sm-form-control" />
+								</div>
+
+								<div class="col_full">
+									<label for="template-contactform-phone">Phone</label>
+									<input type="text" id="template-contactform-phone" name="phone" id="phone" value="" class="phone required sm-form-control" />
+								</div>
+
+								<div class="clear"></div>
+
+								<div class="col_full">
+									<label for="template-contactform-service">Best Time?</label>
+									<div class="col-sm-10">
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="contact_time_preference" id="contact_morning" value="morning" checked="">
+											<label class="form-check-label" for="contact_morning">
+											Morning
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="contact_time_preference" id="contact_afternoon" value="afternoon">
+											<label class="form-check-label" for="contact_afternoon">
+											Afternoon
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="contact_time_preference" id="contact_night" value="evening">
+											<label class="form-check-label" for="contact_night">
+											Evening
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="col_full">
+									<label for="template-contactform-service">Contact by</label>
+									<div class="col-sm-10">
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="contact_type_preference" id="contact_phone" value="phone" checked="">
+											<label class="form-check-label" for="contact_phone">
+											Phone
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="contact_type_preference" id="contact_email" value="email">
+											<label class="form-check-label" for="contact_email">
+											Email
+											</label>
+										</div>
+									</div>
+								</div>
+								
+
+								<div class="clear"></div>
+
+								<div class="col_full">
+									<label for="template-contactform-message">Message <small>*</small></label>
+									<textarea class="required sm-form-control" name="message" id="message" rows="6" cols="30"></textarea>
+								</div>
+
+								<div class="col_full hidden">
+									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+								</div>
+
+								<div class="col_full">
+									<script>
+									grecaptcha.ready(function() {
+									grecaptcha.execute('6LelBI0UAAAAABgA_MlRZHdStOfDv714Tn2Sx-BQ', {action: 'action_name'})
+									.then(function(token) {
+									// Verify the token on the server.
+									});
+									});
+									</script>
+									<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit" class="g-recaptcha"
+       data-sitekey="6LelBI0UAAAAABgA_MlRZHdStOfDv714Tn2Sx-BQ"
+       data-callback="onSubmit" style="float: left;">Send Message</button>
+									<div style="float: left; margin-left: 5px; margin-right: 5px;padding-top: 5px;">or</div> 
+									<div>
+	                            		<a data-lity="" href="https://bostonpaintingsvc.com/next" class="button button-3d nomargin" style="float: left;margin:0px !important;">Request a Free Quote</a>
+	                            	</div>
+								</div>
+
+							</form>
+						</div>
+
+					</div><!-- .postcontent end -->
+
+					<!-- Sidebar
+					============================================= -->
+					<div class="col_half nobottommargin">
+
+						<div class="widget clearfix">
+
+							<h3 class="nobottommargin uppercase">{%tt_tel_topo%}</h3><br>
+
+							<address>
+								<strong>Address:</strong><br>
+								{%state%}<br>
+								{%city%}<br>
+							</address>
+							<abbr title="Phone Number"><strong>Phone:</strong></abbr> {%tel_topo%}<br>
+						</div>
+
+						<div class="line line-sm"></div>
+
+						<div class="widget notopmargin clearfix">
+
+							<a href="https://www.facebook.com/Boston-Painting-Service-742054746177268" target="blank" class="social-icon si-small si-dark si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							
+
+						</div>
+
+					</div><!-- .sidebar end -->
+
+				</div>
+				<a data-lity href="https://bostonpaintingsvc.com/next" class="button button-3d nobottomborder button-full center tright t300 font-primary topmargin footer-stick" style="font-size: 26px;">
+					<div class="container clearfix">
+						REQUEST A FREE QUOTE - WE CAN HELP YOU RIGHT NOW. <strong>Free Estimate</strong> <i class="icon-angle-right" style="top:3px;"></i>
+					</div>
+				</a>
+
+			</div>
+
+		</section><!-- #content end -->
+<!-- %fim% -->

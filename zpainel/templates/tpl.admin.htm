@@ -1,0 +1,54 @@
+<!-- %inicio% -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
+<head>
+	<title>{%tituloSite%} (Zpainel v3.0 - Zaib Tecnologia)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Content-Language" content="pt-br" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store" />
+	<meta http-equiv="Pragma" content="no-cache, no-store" />
+	<meta name="author" content="Zaib Tecnologia" />
+	<link href="css/index.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="jscript/flash.js"></script>
+	<script type="text/javascript" src="jscript/zpainel_admin.js"></script>
+</head>
+<body>
+	<div id="topo">
+		<div id="detalheTopo1"></div>
+		<div id="tituloTopo">
+			<h1>:: {%tituloSite%}</h1>
+		</div>
+		<div id="detalheTopo2"></div>
+		<div id="menuTopo">
+			<ul>
+				<li><a href="javascript:mSair();">Sair</a></li>
+				<li><a href="?zaib-tecnologia=ajuda" target="iframeConteudo">Ajuda</a><span>|</span></li>
+<!-- %links% -->
+				<li><a href="{%link_link_zpainel%}" target="iframeConteudo">{%nm_link_zpainel%}</a><span>|</span></li>
+<!-- %links_fim% -->
+				<li><a href="../" target="blank">Visualizar site</a><span>|</span></li>
+<!-- %configuracoes% -->
+				<li><a href="configuracoes/" target="iframeConteudo">Configurações</a><span>|</span></li>
+<!-- %fim% -->
+			</ul>
+		</div>
+	</div>
+	<div id="menuZpainel">
+		<script type="text/javascript">exibeFlash("imagens/flash/zpainelFlex.swf","100%","100%");</script>
+	</div>
+	<div id="espacoConteudo">
+		<div id="detalheConteudo1"></div>
+		<iframe id="iframeConteudo" name="iframeConteudo" src="http://zpainel.zaib.com.br/" frameborder="0"></iframe>
+		<div id="detalheConteudo2"></div>
+	</div>
+	<div id="rodape">
+		<div id="detalheRodape1"></div>
+		<div id="tituloRodape">
+			<address>Usuário: {%sessionZpainelNome%}</address>
+		</div>
+		<div id="detalheRodape2"></div>
+		<div id="tituloRodape2">
+			<address>Online desde: {%sessionZpainelDataHora%} (Zpainel v3.0 - Zaib Tecnologia)</address>
+		</div>
+	</div>
+</body>
+</html>

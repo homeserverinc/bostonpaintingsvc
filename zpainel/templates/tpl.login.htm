@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+						"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+								
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
+<head>
+	<title>{%tituloSite%} (Zpainel v3.0 - Zaib Tecnologia)</title>
+	<meta name="resource-type" content="document" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="author" content="Zaib Tecnologia" />
+	<meta name="language" content="pt-br" />
+	<link href="css/login.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="jscript/zpainel_login.js"></script>
+</head>
+<body onload="document.getElementById('zpainel_login').focus();">
+<div id="envolveLogin">
+	<div id="login">
+		<div id="caixa1">
+			<img src="imagens/logo_zaib_tecnologia_login.jpg" alt="" />
+			<p>Utilize um nome de usuário e senha válidos para ter acesso ao Zpainel v3.0 da Zaib Tecnologia.</p>
+		</div>
+		<div id="caixa2">
+			<form name="form" id="form" action="{%destino%}" method="post" onsubmit="return mValidar();">
+				<p class="txtCampo">Nome de usuário</p>
+				<p><input type="text" name="zpainel_login" id="zpainel_login" class="form" onfocus="this.className='form formHover';" onblur="this.className='form';" /></p>
+				<p class="txtCampo">Senha</p>
+				<p><input type="password" name="zpainel_pass" id="zpainel_pass" class="form" onfocus="this.className='form formHover';" onblur="this.className='form';" /></p>
+				
+				<p><input type="submit" id="btSubmit" value="Entrar" class="btEntrar" /></p>
+			</form>
+		</div>
+	</div>
+</div>
+<address id="address">{%tituloSite%} (Zpainel v3.0 - Zaib Tecnologia) © 2009 - Todos os direitos reservados. Desenvolvido por <a href="http://www.zaib.com.br" title="Zaib Tecnologia" rel="external">Zaib Tecnologia</a>.</address>
+{%falha%}
+</body>
+</html>
